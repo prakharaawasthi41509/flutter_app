@@ -78,14 +78,35 @@ class _CreateProfilePageState extends State<CreateProfilePage> {
                   ),
                 ),
                 //  drop down part is started from here
-                 DropdownButton<String>(
-                  items: <String>['Foundation level','Diploma level', 'Degree level'].map((String value) {
-                    return DropdownMenuItem<String>(
-                      value: value,
-                      child: Text(value),
-                    );
-                  }).toList(),
-                  onChanged: (_) {},
+                    // drop down ends here
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 3),
+                      child: Text(
+                        "Select term:",
+                        style: TextStyle(
+                            fontSize: 17, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                    Center(
+                      child: DropdownButton(
+                        hint: Text('select'),
+                        items: [
+                          'Foundation level',
+                          'Diploma level',
+                          'Degree level'
+                        ].map((String value) {
+                          return DropdownMenuItem<String>(
+                            value: value,
+                            child: Text(value),
+                          );
+                        }).toList(),
+                        onChanged: (_) {},
+                      ),
+                    ),
+                  ],
                 ),
 
                 Center(
